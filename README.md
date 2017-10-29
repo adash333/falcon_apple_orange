@@ -31,6 +31,10 @@ curl -X POST http://localhost:8000/debug -H "Content-Type: multipart/form-data" 
 2017/10/29
 http://twosquirrel.mints.ne.jp/?p=20670
 
-「Pythonで画像処理のWebAPIを作る ～Falcon編～」を写経してみる
-2017/10/29
-http://twosquirrel.mints.ne.jp/?p=20670
+Kerasで自前データで機械学習した成果をWEBで公開（Keras+Flask）（１）
+2017/10/26
+http://twosquirrel.mints.ne.jp/?p=20440
+
+自前のデータでKerasで画像分類を写経してみる（１）
+2017/7/31 2017/8/4
+http://twosquirrel.mints.ne.jp/?p=19448
