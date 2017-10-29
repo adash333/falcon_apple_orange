@@ -24,3 +24,13 @@ python falcon_predict.py
 
 （３）コマンドプロンプトを起動して、falcon_predict.py と同じフォルダに移動してから、
 curl -X POST http://localhost:8000/debug -H "Content-Type: multipart/form-data" -F "file=@image001.jpg"
+
+# 解説ページ
+
+「Pythonで画像処理のWebAPIを作る ～Falcon編～」を写経してみる
+2017/10/29
+http://twosquirrel.mints.ne.jp/?p=20670
+
+「Pythonで画像処理のWebAPIを作る ～Falcon編～」を写経してみる
+2017/10/29
+http://twosquirrel.mints.ne.jp/?p=20670
