@@ -4,33 +4,23 @@
 # and http://blog.apitore.com/2017/09/27/python-webapi-falcon/
 # original code from https://recipe.narekomu-ai.com/2017/10/chainer_web_demo_2/
 
-# falcon_vgg16.py
-
 import falcon
 import json
 import io
 import os
 import sys
-from keras.applications.vgg16 import VGG16
-from keras.models import Sequential, Model
-from keras.layers import Input, Activation, Dropout, Flatten, Dense
+import codecs
 import numpy as np
 from datetime import date
 from datetime import datetime
 from PIL import Image
 from falcon_multipart.middleware import MultipartMiddleware
 
+from keras.models import Sequential, Model
+from keras.layers import Input, Activation, Dropout, Flatten, Dense
 from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
 from keras.preprocessing import image
-import numpy as np
-import sys
-
-import codecs, json
-
-from keras.preprocessing import image
 from keras.models import model_from_json
-import sys
-
 
 class DebugResource:
     def on_post(self, req, res):
@@ -58,7 +48,9 @@ class DebugResource:
         image = np.array(pilimg.resize((25, 25)))
         image = image.transpose(2, 0, 1)
         image = image.reshape(1, image.shape[0] * image.shape[1] * image.shape[2]).astype("float32")[0]
-        result = model.predict_classes(np.array([image / 255.]))
+        x = np.array([image / 255.])
+        result = model.predict_classes(x)
+        proba = model.predict_proba(x)
         # image = np.array(pilimg.convert("L").resize((28, 28)))
         # print(filepath)
         # さらにフラットな1次元配列に変換。
@@ -67,6 +59,9 @@ class DebugResource:
         # print("result:", result[0], "（0:りんご, 1:オレンジ）")
         predict = result[0].tolist()
         result = classes[predict]
+        predict_proba = proba[0].tolist()
+        result_proba = predict_proba[predict]
+
 
         # クラスを予測
         # 入力は1枚の画像なので[0]のみ
@@ -79,7 +74,7 @@ class DebugResource:
 
         # 予測確率が高いトップ1を出力
         res.status = falcon.HTTP_200
-        res.body = json.dumps({'result':result})
+        res.body = json.dumps({'result':result, 'probability':result_proba})
 
 # 画像認識のイニシャライズ
 result_dir = 'results'
