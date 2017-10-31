@@ -1,7 +1,7 @@
 # falcon_apple_orange
 
-りんごとオレンジを識別するWEB APIです。Falconを用いています。
-画像を送ると、リンゴかオレンジが判定して、jsonを返してきます。
+りんごとオレンジを識別するWEB APIです。Falconを用いています。(Flaskを用いたflask_predict.pyも掲載しました)
+画像を送ると、リンゴかオレンジが判定して、その結果と確率をjsonで返してきます。
 
 （環境）
 Windows 8.1
