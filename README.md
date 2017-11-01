@@ -10,6 +10,9 @@ Python 3.6.1
 Tensorflow 1.2.1
 Keras 2.0.6
 
+keras, tensorflowのインストール方法
+http://twosquirrel.mints.ne.jp/dokuwiki/doku.php/windows%E3%81%A7%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%92%E5%B0%8E%E5%85%A5%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95#windowsにkeras_tensorflow_をインストール
+
 pip install cython falcon gunicorn falcon-multipart
 
 http://curl.haxx.se/download.html の下の方へ行って、Windows用のファイルをダウンロードして、Windowsの環境変数のPATHを通す。
