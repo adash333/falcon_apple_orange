@@ -38,3 +38,9 @@ http://twosquirrel.mints.ne.jp/?p=20440
 自前のデータでKerasで画像分類を写経してみる（１）
 2017/7/31 2017/8/4
 http://twosquirrel.mints.ne.jp/?p=19448
+
+Falcon(Python)で画像分類（apple-orange）のWebAPIとPHPフロントエンド
+2017/11/1
+http://twosquirrel.mints.ne.jp/?p=20772
+
+
